@@ -8,6 +8,16 @@ function customRender(reactElement, container)
  container.appendChild(domElement)
    */ // Was Done as in this we have to add individual attributes 
 
+
+
+   const domElement=document.createElement(reactElement.type)
+   domElement.innerHTML=reactElement.children
+   for(const prop in reactElement.props)
+   {
+    if(prop == 'children') continue; //(previously  people used to pass children as prop)
+    domElement.setAttribute(prop, reactElement.props[prop])
+   }
+container.appendChild(domElement)
 }
 const reactElement = {
     type: 'a',
