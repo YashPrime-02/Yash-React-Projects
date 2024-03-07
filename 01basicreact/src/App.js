@@ -1,8 +1,12 @@
-
+import Chai  from "./Chai.jsx"
 
 function App() {
   return (
-   <h1> Chai Aur React</h1>
+    <>
+    <Chai/>
+   <h1> Chai Aur React || Yash Mishra</h1>
+   </>
+  
   );
 }
 
