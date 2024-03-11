@@ -14,7 +14,7 @@ function App() {
     if(charAllowed) str+= "!@#$%^&*()-_=+[{]}\\|;:,<.>/?"
      // now we have to figure out how much length of password we need to generate random password
      
-    for(let i=1;i<=array.length;i++) // i would replace array.length with length once code works
+    for(let i=1;i<=length;i++) 
     {
      let char=Math.floor(Math.random()*str.length+1) 
      pass+=str.charCodeAt(char)
@@ -23,6 +23,11 @@ function App() {
   
   } ,[length,numberAllowed,charAllowed,setPassword])
   //Set password is also dependency of passwordGenerator
+
+
+
+
+
  
   return (
     <>
@@ -30,7 +35,7 @@ function App() {
     <br/>
      <h3 className='text-2xl text-white text-center my-3'>Using React And Tailwind</h3>
      <br/><br/>
-   <div className='w-full max-w-md mx-auto  rounded-lg px-2  my-8 text=orange-500
+   <div className='w-full max-w-md mx-auto  rounded-lg px-2  my-8 text-blue-400
       bg-gray-600 shadow-none'>
      <div className='flex shadow rounded-lg overflow-hidden mb-4'>
        
