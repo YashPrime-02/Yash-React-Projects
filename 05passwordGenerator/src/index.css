@@ -8,3 +8,7 @@
  .copy:hover {
     background-color: red;
  }
+ .copy:active {
+   width: 40px;
+   
+}
