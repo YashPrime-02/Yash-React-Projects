@@ -1,10 +1,16 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect ,useRef } from 'react'
+//useRef is used to deal with copy and clipboard problem here and its used to get reference 
 function App() {
   const [length, setLength] = useState(7)
   const [numberAllowed, setNumberAllowed] = useState(false);
   const [charAllowed, setCharAllowed] = useState(false);
   const [password, setPassword]= useState(""); // password generate hona hai automatically
- 
+
+  
+//Using useRef Hook
+const passwordRef= useRef(null)
+
+
   const passwordGenerator = useCallback(() => 
   { // this is password generator function (js ka  basics being used here)
 
@@ -23,7 +29,13 @@ function App() {
   
   } ,[length,numberAllowed,charAllowed,setPassword]) // here set password is used to avoid infinite loop condition in which all passwords are shown without stop 
   //Set password is also dependency of passwordGenerator used for Concepts Of Memonisation
-    
+   
+  const copyPasswordToClipboard= useCallback(() =>{
+   passwordRef.current?.select() //select effect laane ke liye
+   passwordRef.current?.setSelectionRange(0,length) //set selection range
+   window.navigator.clipboard.writeText(password) //clipboard me value copy karne ke liye react ka feature ha window tab
+  },[password])
+
   useEffect(() => {
     passwordGenerator()
   }, [length, numberAllowed, charAllowed, passwordGenerator])
@@ -47,9 +59,12 @@ function App() {
       placeholder='Password'
       className='outline-none w-full py-1 px-4'
       readOnly
+      ref={passwordRef}
      ></input>
 
-     <button className='outline-none bg-blue-600 text-white px-3 py-0.5 '>COPY</button>
+     <button onClick={copyPasswordToClipboard} 
+     className='outline-none bg-blue-600 text-white 
+     px-3 py-0.5 '>COPY</button>
 
 
     </div>
