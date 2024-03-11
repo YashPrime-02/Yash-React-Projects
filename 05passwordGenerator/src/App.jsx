@@ -62,8 +62,9 @@ const passwordRef= useRef(null)
       ref={passwordRef}
      ></input>
 
-     <button onClick={copyPasswordToClipboard} 
-     className='outline-none bg-blue-600 text-white 
+     <button onClick={copyPasswordToClipboard}  
+     
+     className=' copy outline-none bg-blue-600 text-white 
      px-3 py-0.5 '>COPY</button>
 
 

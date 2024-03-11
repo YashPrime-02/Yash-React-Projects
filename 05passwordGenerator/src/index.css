@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.copy {
+    cursor: pointer;
+ }
+ 
+ .copy:hover {
+    background-color: red;
+ }
