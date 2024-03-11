@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 function App() {
   const [length, setLength] = useState(7)
   const [numberAllowed, setNumberAllowed] = useState(false);
@@ -17,24 +17,26 @@ function App() {
     for(let i=1;i<=length;i++) 
     {
      let char=Math.floor(Math.random()*str.length+1) 
-     pass+=str.charCodeAt(char)
+     pass+=str.charAt(char)
     }
     setPassword(pass)
   
-  } ,[length,numberAllowed,charAllowed,setPassword])
-  //Set password is also dependency of passwordGenerator
+  } ,[length,numberAllowed,charAllowed,setPassword]) // here set password is used to avoid infinite loop condition in which all passwords are shown without stop 
+  //Set password is also dependency of passwordGenerator used for Concepts Of Memonisation
+    
+  useEffect(() => {
+    passwordGenerator()
+  }, [length, numberAllowed, charAllowed, passwordGenerator])
 
 
 
 
-
- 
-  return (
+    return (
     <>
      <h1 className='text-5xl text-white text-center'> Password Generator</h1>
-    <br/>
+    
      <h3 className='text-2xl text-white text-center my-3'>Using React And Tailwind</h3>
-     <br/><br/>
+    
    <div className='w-full max-w-md mx-auto  rounded-lg px-2  my-8 text-blue-400
       bg-gray-600 shadow-none'>
      <div className='flex shadow rounded-lg overflow-hidden mb-4'>
