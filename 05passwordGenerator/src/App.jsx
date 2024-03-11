@@ -65,7 +65,7 @@ const passwordRef= useRef(null)
      <button onClick={copyPasswordToClipboard}  
      
      className=' copy outline-none bg-blue-600 text-white 
-     px-3 py-0.5 '>COPY</button>
+     px-3 py-0.5 '> <h4>COPY </h4></button>
 
 
     </div>
