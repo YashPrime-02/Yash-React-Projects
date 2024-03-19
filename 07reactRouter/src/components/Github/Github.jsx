@@ -20,12 +20,11 @@ function Github()
   return (
     <div className='text-center m-4  text-white p-4 text-3xl bg-gray-500' >
         Github Followers : {data.followers}
-        <img src={data.avatar_url} alt='GitHub Photo' width={350}/>
+        <img src={data.avatar_url} alt='GitHub Display Photo' width={350}/>
         
          </div>
   )
 }
-
 export default Github
 export const githubInfoLoader= async() =>
 {
