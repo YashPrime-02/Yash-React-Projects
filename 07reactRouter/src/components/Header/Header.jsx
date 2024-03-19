@@ -2,6 +2,7 @@ import React from 'react'
 import {Link, NavLink} from 'react-router-dom'
 import About from '../About/About';
 import Contact from '../Contact/Contact';
+import Github from '../Github/Github';
 export default function Header() {
     return (
         <header className="shadow sticky z-50 top-0">
@@ -77,6 +78,21 @@ export default function Header() {
                                     } //yahan pe Navlink className me callback i.e  '()' use ho raha to achieve the 'isActive' property
                                 >
                                     Contact
+                                </NavLink>
+                            </li>
+
+                            <li>
+                                <NavLink
+                                to="/github"
+                                    className={(isActive) => 
+                                        `block py-2 pr-4 pl-3 duration-200 
+                                        ${isActive ? "text-orange-700": "text-grey-700" }
+                                         border-b border-gray-100
+                                         hover:bg-gray-50 lg:hover:bg-transparent lg:border-0
+                                         hover:text-orange-700 lg:p-0`
+                                    } //yahan pe Navlink className me callback i.e  '()' use ho raha to achieve the 'isActive' property
+                                >
+                                    GitHub
                                 </NavLink>
                             </li>
 
