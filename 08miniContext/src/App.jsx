@@ -1,8 +1,17 @@
-import React from "react"
+
+import UserContextProvider from './context/UserContextProvider';
+import Login from './components/Login';
+import Profile from './components/Profile';
 function App() {
+
   return (
     <>
-      <h1>Hello  React ,We Doing Context Stuff Now</h1>
+    <UserContextProvider>   
+    <h1> React Mini Context</h1>
+    <Login/>
+    <Profile/>
+
+    </UserContextProvider>
     </>
   )
 }
