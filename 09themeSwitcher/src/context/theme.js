@@ -8,6 +8,7 @@ export const ThemeContext = createContext({
 }) //yahan default object de rahe unlike last time
 
 export const ThemeProvider = ThemeContext.Provider
+
 export default function useTheme(){
 return useContext(ThemeContext)
 //isse ek baar me har jagah import ho jayega unlike last time
