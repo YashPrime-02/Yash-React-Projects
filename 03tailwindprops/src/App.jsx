@@ -7,9 +7,9 @@ function App() {
     <>
       <h1 className='bg-blue-500 text-black p-4 rounded-xl mb-4'>Tailwind Test || Yash Mishra</h1>
       
-      <Card username="Yash" btn_text="View Me"/>
+      <Card username="Yash" btn_text="View "/>
       
-      <Card username="Shreyash" btn_text="Visit Me"/>
+      <Card username="Shreyash" btn_text="Visit "/>
    
     </>
   )

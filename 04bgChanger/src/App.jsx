@@ -15,17 +15,28 @@ function App() {
             className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
             style={{backgroundColor: "blue" }}> BLUE </button>
  
-            <button onClick={() => setColor("red")}  className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
+            <button onClick={() => setColor("red")}  
+            className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
             style={{backgroundColor: "red" }}> RED </button>
 
-           <button onClick={() => setColor("green")}  className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
-            style={{backgroundColor: "green" }}> GREEN </button>
+           <button onClick={() => setColor("green")}  
+           className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
+           style={{backgroundColor: "green" }}> GREEN </button>
 
-          <button onClick={() => setColor("grey")}  className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
-            style={{backgroundColor: "grey" }}> GREY </button>
+          <button onClick={() => setColor("grey")}  
+          className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
+          style={{backgroundColor: "grey" }}> GREY </button>
             
-          <button onClick={() => setColor("black")}  className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
-            style={{backgroundColor: "black" }}> BLACK </button>
+          <button onClick={() => setColor("black")}  
+          className="outline-none px-5 py-1 rounded-full text-white  shadow-lg" 
+          style={{backgroundColor: "black" }}> BLACK </button>
+
+          <button onClick={() => setColor("pink")}
+            className= "outline-none px-5 py-1 rounded-full text-white shadow-lg"
+            style={{ backgroundColor:"pink"}}> PINK   </button>
+          <button onClick={() => setColor("yellow")}
+            className= "outline-none px-5 py-1 rounded-full text-white shadow-lg"
+            style={{ backgroundColor:"yellow"}}> YELLOW   </button>
 
          </div>
       </div>
