@@ -3,7 +3,7 @@ import './App.css'
 
 function App()
  {
- let[counter,setCounter]= useState(15) //it propogates state changes to UI components , bracket me default value hota
+ let[counter,setCounter]= useState(18) //it propogates state changes to UI components , bracket me default value hota
 //let counter=15
 const addValue =() => 
 {
