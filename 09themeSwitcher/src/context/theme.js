@@ -13,3 +13,5 @@ export default function useTheme(){
 return useContext(ThemeContext)
 //isse ek baar me har jagah import ho jayega unlike last time
 }
+
+export const TodoProvider = ThemeContext.Provider
