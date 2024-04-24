@@ -22,3 +22,8 @@ export const todoSlice = createSlice({
     //Making of updateTodo left 
     }
 })
+export const {addTodo,removeTodo}=todoSlice.actions
+//exporting addTodo and removeTodo coz inke thru state update hoti
+export default todoSlice.reducer
+//exporting store as it needs update from components to work
+
