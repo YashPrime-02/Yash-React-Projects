@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {useDispatch} from 'react-redux'
-
+import {addTodo} from '../features/todo/todoSlice'
 
 //Store me add karne ke liye we adding useDispatch
 function AddTodo() {
@@ -9,10 +9,7 @@ function AddTodo() {
   const dispatch= useDispatch()
   const addTodoHandler =  (e) => {
     e.preventDefault()
-    dispatch({
-      type:'todos/addTodo',
-      payload:input
-    })
+    dispatch(addTodo(input))
     setInput('')
   }
 
