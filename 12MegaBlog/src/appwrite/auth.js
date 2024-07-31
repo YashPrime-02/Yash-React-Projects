@@ -11,7 +11,7 @@ export class AuthService {
         this.client
             .setEndpoint(conf.appwriteUrl)
             .setProject(conf.appwriteProjectId);
-        this.account = new Account(this.client);
+        this.account = new Account(this.client); //since here we have declared object by new keyword so contrusctor would be made too here
             
     }
 
