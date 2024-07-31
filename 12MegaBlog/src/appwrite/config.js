@@ -71,6 +71,83 @@ async deletePost(slug){
         return false
     }
 }
+
+async getPost(slug)
+{
+    try{
+        return await this.databases.getDocument(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
+            slug
+        )
+        
+    }
+    catch(error){
+        console.log("Appwrite service :: getPost :: error",error);
+        return false
+    }
+}
+
+async getPosts(queries=[Query.equal("status","active")]){// ye format coz future me multiple array me entries ho sakti
+
+        try{
+            return await this.databases.listDocuments(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                queries,
+                //read more about queries and pagination from documentation
+            )
+            
+        }
+        catch(error){
+            console.log("Appwrite service :: getPosts :: error",error);
+            return false
+        }
+     } 
+
+//FILE UPLOAD SERVICE (yahan pe sirf name nahi actual block dete)
+
+async uploadFile(file){
+    try{
+        return await this.bucket.createFile(
+            conf.appwriteBucketId,
+            ID.unique(),
+            file
+            )
+        }
+    catch(error){
+        console.log("Appwrite service :: uploadFile :: error",error);
+        return false;
+    }
+}
+
+
+async deleteFile(fileId)
+{
+    try
+    {
+        await this.bucket.deleteFile(
+            conf.appwriteBucketId,
+            fileId
+        )
+        return true
+    }
+    
+    catch(error){
+        console.log("Appwrite service :: deleteFile :: error",error);
+        return false;
+    }
+}
+
+getFilePreview(fileId)
+{
+    return this.bucket.getFilePreview(
+        conf.appwriteBucketId,
+        fileId,
+        { width: 200, height: 200 }  // change width and height as per your requirements
+    )
+}
+
 }
 
 const service =new Service()
