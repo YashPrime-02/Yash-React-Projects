@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+
+// initialState is a default state, which will be used when state is not provided in the dispatch function
 const initialState={
    status: false,
    userData: null
